@@ -11,6 +11,12 @@ db = client.dbsparta
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 
+
+@app.route('/')
+def home():
+    return render_template('signup.html')
+
+
 @app.route('/user/signup', methods=['POST'])
 def signup():
     # id, password 받아오고 저장
