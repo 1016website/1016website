@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+  </head>
+  <script>
+    $(document).ready(function () {
+        
+    });
+    function hadnleClick(target) {
+      $(target).find(".lnb").stop().slideToggle(300);
+    }
+  </script>
+  <style>
+    li {
+      list-style: none;
+      cursor: pointer;
+      width: fit-content;
+    }
+    .lnb {
+      list-style: none;
+      display: none;
+    }
+  </style>
+  <body>
+    <ul class="gnb">
+      <li onclick="hadnleClick(this)">
+        주제1
+        <ul class="lnb">
+          <li>가</li>
+          <li>나</li>
+          <li>다</li>
+        </ul>
+      </li>
+      <li onclick="hadnleClick(this)">
+        주제2
+        <ul class="lnb">
+          <li>가</li>
+          <li>나</li>
+          <li>다</li>
+        </ul>
+      </li>
+      <li onclick="hadnleClick(this)">
+        주제3
+        <ul class="lnb">
+          <li>가</li>
+          <li>나</li>
+          <li>다</li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

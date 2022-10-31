@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>홈</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function () {});
+    function on() {
+      $.ajax({
+        type: "GET",
+        url: "/protected",
+        data: {},
+        success: function (res) {
+          console.log(res);
+        },
+      });
+    }
+  </script>
+  <body>
+    <button onclick="location.href='/user/login'">로그인하기</button>
+    <!-- <button onclick="location.href='user/signup'">회원가입하기</button> -->
+    <button onclick="on()">토큰 확인하기</button>
+  </body>
+</html>
