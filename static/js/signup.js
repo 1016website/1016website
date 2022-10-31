@@ -36,7 +36,7 @@ function Signup() {
   if (userEmail.search(/\s/) != -1) {
     return errorMessage("이메일에 공백이 들어갈 수 없습니다.");
   }
-  if (!emailValCheck.test(username)) {
+  if (!emailValCheck.test(userEmail)) {
     return errorMessage("이메일 형식이 올바르지 않습니다.");
   }
 
