@@ -28,27 +28,6 @@
                 }
             });
       }
-      function signup() {
-          let email_sign = $('#email_sign').val()
-          if (email_sign.includes('@')) {
-              let data = {
-                  "email_give": $('#email_sign').val(),
-                  "password_give": $('#password_sign').val()
-              }
-              $.ajax({
-                  type: "POST",
-                  url: "/signup",
-                  data: JSON.stringify(data),
-                  dataType: "json",
-                  contentType: "application/json; charset=utf-8",
-                  success: function (response) {
-                      alert(response['msg']);
-                  }
-              });
-          } else {
-              alert('올바른 형태가 아닙니다')
-          }
-      }
       function logout(){
             $.ajax({
                 type:"GET",

@@ -33,7 +33,7 @@ jwt = JWTManager(app)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('login.html')
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -60,27 +60,6 @@ def login():
     response = jsonify({"msg":"로그인 성공","login" : True}) # resp을 만든이유가 단지 메세지를 위한게 아니라 쿠키를 같이 보내야하기 때문에 만든듯
     set_access_cookies(response, access_token) # 쿠키에 토큰을 넣으면서 response 안에 jwt cookie를 넣어 리턴하려고
     set_refresh_cookies(response, refresh_token) # 쿠키에 토큰을 넣으면서 response 안에 jwt cookie를 넣어 리턴하려고
-
-    return response, 200 # 서버가 제대로 요청을 처리했다는 성공
-
-@app.route("/signup", methods=["POST"])
-def signup():
-    # print(request.is_json) # json형태가 맞는지 확인
-
-    user = request.get_json()
-    email_receive = user['email_give']
-    password_receive = user['password_give']
-
-    p = bcrypt.hashpw(password_receive.encode('utf-8'), bcrypt.gensalt()) #bcrypt 암호화
-
-    doc = {
-        "email" : email_receive,
-        "password" : p
-    }
-
-    db.users.insert_one(doc)
-
-    response = jsonify({'msg':'회원가입 성공!'})
 
     return response, 200 # 서버가 제대로 요청을 처리했다는 성공
 
