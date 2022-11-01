@@ -1,0 +1,38 @@
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: darkgrey;
+}
+.login {
+    width: 700px;
+    height: 500px;
+    text-align: center;
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.login .logo {
+    margin: 70px auto 50px auto;
+    font-size:75px;
+    font-family: 'Lobster', cursive;
+}
+.login .form-floating {
+    margin: auto auto 2px auto;
+    width: 300px;
+}
+.login .btn-secondary {
+    margin-top: 13px;
+    width: 300px;
+}
+.login a:link,a:visited {
+    color: crimson;
+}
+.login a:hover {
+    color: slateblue;
+}

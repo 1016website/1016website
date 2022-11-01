@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link href="../static/css/login.css" rel="stylesheet">
+    <script>
+        $(document).ready(function (){
+             protect();
+        });
+        function login() {
+            let data = {
+                "email": $('#email').val(),
+                "password": $('#password').val()
+            }
+            $.ajax({
+                type: "POST",
+                url: "/login",
+                data: JSON.stringify(data),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    alert(response['msg']);
+                    window.location.reload();
+                }
+            });
+      }
+      function signup() {
+          let email_sign = $('#email_sign').val()
+          if (email_sign.includes('@')) {
+              let data = {
+                  "email_give": $('#email_sign').val(),
+                  "password_give": $('#password_sign').val()
+              }
+              $.ajax({
+                  type: "POST",
+                  url: "/signup",
+                  data: JSON.stringify(data),
+                  dataType: "json",
+                  contentType: "application/json; charset=utf-8",
+                  success: function (response) {
+                      alert(response['msg']);
+                  }
+              });
+          } else {
+              alert('올바른 형태가 아닙니다')
+          }
+      }
+      function logout(){
+            $.ajax({
+                type:"GET",
+                url:"/logout",
+                data:{},
+                success : function (response){
+                    alert(response['msg']);
+                    window.location.reload()
+                }
+            })
+      }
+      function protect(){
+            $.ajax({
+                type: "GET",
+                url: "/protected",
+                data: {},
+                success: function (response) {
+                    console.log(response);
+                    if (response['result'] === 'fail') {
+                        $('#before_login').show()
+                        $('#sign_up').show()
+                        $('#after_login').hide()
+                    } else {
+                        $('#before_login').hide()
+                        $('#sign_up').hide()
+                        $('#after_login').show()
+
+                        $('#username').text(response['logged_in_as'])
+                    }
+                }
+            });
+      }
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="login">
+        <h1 class="logo">Coding Life</h1>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button type="button" class="btn btn-secondary" onclick="login()">Sign in</button>
+        <br><br>
+        Don't have an account? <a href="" style="font-weight:bold">Sign Up!<a/>
+    </div>
+</div>
+</body>
+</html>
