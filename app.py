@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from datetime import timedelta, datetime, timezone
 
 from flask import Flask, request, jsonify, render_template
@@ -6,6 +7,17 @@ from flask_jwt_extended import (
     set_access_cookies, set_refresh_cookies, get_jwt)
 
 import bcrypt
+from pymongo import MongoClient
+
+from flask_bcrypt import Bcrypt, generate_password_hash, check_password_hash
+
+import certifi
+
+ca = certifi.where()
+
+db = client.dbsparta
+app = Flask(__name__)
+bcrypt = Bcrypt(app)
 
 from pymongo import MongoClient
 
@@ -63,26 +75,22 @@ def login():
 
     return response, 200 # 서버가 제대로 요청을 처리했다는 성공
 
-@app.route("/signup", methods=["POST"])
+
+@app.route('/user/signup', methods=['POST'])
 def signup():
-    # print(request.is_json) # json형태가 맞는지 확인
+    # id, password 받아오고 저장
+    user_id = request.form['user_id']
+    user_pwd = request.form['user_pwd']
+    user_nick = request.form['user_nick']
+    pw_hash = generate_password_hash(user_pwd)
 
-    user = request.get_json()
-    email_receive = user['email_give']
-    password_receive = user['password_give']
+    # id 중복확인
+    if db.user.count_documents({'user_id': user_id}) == 0:
+        db.user.insert_one({'user_id': user_id, 'user_pwd': pw_hash, 'user_nick': user_nick})
+        return jsonify({'result': 'SUCCESS', 'message': 'SIGN UP SUCCESS'})
+    else:
+        return jsonify({'result': 'FAIL', 'message': 'user_id already exists'})
 
-    p = bcrypt.hashpw(password_receive.encode('utf-8'), bcrypt.gensalt()) #bcrypt 암호화
-
-    doc = {
-        "email" : email_receive,
-        "password" : p
-    }
-
-    db.users.insert_one(doc)
-
-    response = jsonify({'msg':'회원가입 성공!'})
-
-    return response, 200 # 서버가 제대로 요청을 처리했다는 성공
 
 @app.route("/protected", methods=["GET"])
 @jwt_required(optional=True) # 토큰이 인정된 (로그인된) 유저만이 이 API를 사용할 수 있다. 유효성 테스트 + optional=true는 분기처리가능
@@ -116,4 +124,8 @@ if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
 
 
+
+@app.route('/')
+def home():
+    return render_template('signup.html')
 
