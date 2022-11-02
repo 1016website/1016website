@@ -11,133 +11,106 @@
             font-family: 'Noto Sans KR', sans-serif;
         }
 
-        .banner {
+        .block {
             width: 100%;
-            height: 250px;
-
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.aitimes.com/news/photo/202204/143777_149131_434.jpg");
-            background-size: cover;
-            background-position: center;
-
-            color: white;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .banner > h1 {
-            font-weight: bold;
-        }
-
-        .banner > button {
-            margin-left: 1200px;
-        }
-
-        .top {
-            margin-top: 50px;
 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            text-align: center;
-        }
-
-        .bottom {
-            height: 300px;
-            margin: 30px auto 20px auto;
-            text-align: center;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            background-color: rgba(215, 215, 220, 0.8);
-        }
-
-        .container {
-            width: 300vw;
-            transition: transform 0.5s;
-        }
-
-        .inner {
-            width: 100vw;
-            float: left;
             margin: auto;
+            background: #fdfdfd;
         }
 
-        .inner > img {
-            width: 100%;
+        .block_one {
+            width: 1200px;
+            height: 300px;
+            margin: 100px auto 200px auto
         }
-        .allbtn {
+
+        .block_one > img {
+            float: right;
+            border: 5px solid #ddd8d8;
+            border-radius: 25px;
+        }
+
+        .block_two {
+            width: 1200px;
+            height: 300px;
+            margin-bottom: 150px;
+        }
+
+        .block_two > img {
+            float: left;
+            margin-right: 80px;
+            border: 5px solid #ddd8d8;
+            border-radius: 25px;
+        }
+
+        .title {
+            margin-bottom: 100px;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            position: absolute;
+            left: 50px;
+            top: 10px;
+
+            color: rgba(114, 192, 188);
+        }
+
+        .footer {
+            background-color: #ddd8d8;
+
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            margin: 20px 20px 20px 20px;
+            width: 100%;
+            height: 300px;
+        }
+
+        .btn {
+            font-size: 16px;
+            font-weight: 400;
+            color: #fff;
+            border-radius: 2px;
+            background: rgba(114, 192, 188);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            padding: 10px;
+            width: 180px;
         }
     </style>
 </head>
-<body style="margin: 0">
-<div class="banner">
-    <h1>Welcome to the Coding Life!</h1>
-    <button onclick="location.href='/login'">로그인 하러가기</button>
-</div>
-<div class="top">
-    <div>
-        <h2>코딩 초보들의 의한, 초보들을 위한 그런 사이트!</h2>
+<body>
+<div class="block">
+    <h1 class="title">💻 The Coding Life!</h1>
+    <div class="block_one">
+        <img src="/static/landing_images/first_image.png" width="480px" height="300px" alt="프론트엔드와 백엔드의 차이점">
+        <h2>코딩 초보들의 의한, 초보들을 위한 그런 사이트! 🎉</h2>
         <br>
         <p>Frontend를 위한 언어는 어떻게 접근하고 공부하면 좋을까?</p>
         <p>Backend는 어떻게 공부해야하고 어떤 사람이 백엔드 개발자가 될 수 있을까?</p>
+        <button class="btn" onclick="location.href = '/login'">로그인 하러가기</button>
     </div>
-</div>
-
-<div class="allbtn">
-    <button class="btn1"></button>
-    <button class="btn2"></button>
-    <button class="btn3"></button>
-</div>
-
-<div style="overflow: hidden">
-    <div class="container">
-        <div class="inner">
-            <img src="../static/1.png">
-        </div>
-        <div class="inner">
-            <img src="../static/2.png">
-        </div>
-        <div class="inner">
-            <img src="../static/3.png">
-        </div>
-    </div>
-</div>
-
-<script>
-    document.querySelector('.btn1').addEventListener('click', function () {
-        document.querySelector('.container').style.transform = 'translateX(0)';
-    })
-    document.querySelector('.btn2').addEventListener('click', function () {
-        document.querySelector('.container').style.transform = 'translateX(-100vw)';
-    })
-    document.querySelector('.btn3').addEventListener('click', function () {
-        document.querySelector('.container').style.transform = 'translateX(-200vw)';
-    })
-</script>
-
-<div class="bottom">
     <div>
+
+    </div>
+    <div class="block_two">
+        <img src="/static/landing_images/second_image.png" width="480px" height="300px" alt="컴퓨터언어 종류">
         <h2>뭐가 됐든 웹개발부터 차근차근 공부하려면 코딩라이프에서 무료 소스를 찾아보자!</h2>
         <br>
         <p>나만 알고 있는 무료 소스를 공유하고, 남들은 어떤 무료 소스를 먼저 찾아봤을지 코딩라이프에서 확인하고 코딩 공부해보자.</p>
-        <p>코딩을 너무 어렵게만 생각하지말고, 코딩이 무엇인지, 무엇을 할 수 있는지 일단 무료 소스부터 확인해보세요. :)</p>
-        <button onclick="location.href='/mainpage'">더 알아보기</button>
+        <p>코딩을 너무 어렵게만 생각하지말고, 코딩이 무엇인지, 무엇을 할 수 있는지 일단 무료 소스부터 확인해보세요.</p>
+    </div>
+    <div class="footer">
+        <h2>Ready to Start?</h2>
+        <p style="margin-bottom: 30px">필요한 영상이 전부 모여있는 코딩라이프의 페이지 구경가기! 🤓</p>
+        <button class="btn" onclick="location.href = 'mainpage'">To the World</button>
     </div>
 </div>
-
 </body>
 </html>

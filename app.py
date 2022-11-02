@@ -22,7 +22,7 @@ db = client.dbsparta
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 
-from pymongo import MonfgoClient
+from pymongo import MongoClient
 
 # ----------------------------------------------------------------------
 
