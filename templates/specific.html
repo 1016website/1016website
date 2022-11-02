@@ -9,8 +9,8 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href ="../static/css/style.css">
-  <script src="../static/js/js.js"></script>
+  <link rel="stylesheet" type="text/css" href ="../static/css/specificstyle.css">
+  <script src="../static/js/specificjs.js"></script>
   <title>Title</title>
 
 <!--    <script>-->
@@ -22,7 +22,9 @@
     <div class="mytitle">
           <button onclick="open_box()" type="button" class="btn btn-outline-dark">영상 추가하기</button>
     </div>
-
+    <div style="position:fixed; left:50px; top:50px; cursor:pointer; font-size:14px; font-weight:600;">
+        <span class="specific_back"  onclick="history.back()" >뒤로가기</span>
+    </div>
     <div id="post-box" class="mypost">
         <div class="form-floating mb-3">
             <input id="url" type="email" class="form-control"  placeholder="name@example.com">

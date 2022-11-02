@@ -9,7 +9,7 @@ function show_video() {
         data: {},
         success: function (response) {
             let rows = response['videos']
-            for (i = 0; i < rows.length; i++) {
+            for (let i = 0; i < rows.length; i++) {
                 let image = rows[i]['image']
                 let comment = rows[i]['comment']
                 let star = rows[i]['star']
