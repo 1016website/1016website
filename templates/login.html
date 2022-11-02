@@ -8,9 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <link href="../static/css/login.css" rel="stylesheet">
     <script>
-        $(document).ready(function (){
-             protect();
-        });
         function login() {
             let data = {
                 "email": $('#email').val(),
@@ -47,15 +44,8 @@
                 success: function (response) {
                     console.log(response);
                     if (response['result'] === 'fail') {
-                        $('#before_login').show()
-                        $('#sign_up').show()
-                        $('#after_login').hide()
-                    } else {
-                        $('#before_login').hide()
-                        $('#sign_up').hide()
-                        $('#after_login').show()
-
-                        $('#username').text(response['logged_in_as'])
+                        history.back();
+                        alert("로그인을 해주세요");
                     }
                 }
             });
@@ -77,6 +67,8 @@
         <button type="button" class="btn btn-secondary" onclick="login()">Sign in</button>
         <br><br>
         Don't have an account? <a href="" style="font-weight:bold">Sign Up!<a/>
+
+        <button type="button" class="btn btn-secondary" onclick="">Sign in</button>
     </div>
 </div>
 </body>

@@ -35,6 +35,10 @@ jwt = JWTManager(app)
 def home():
     return render_template('login.html')
 
+@app.route('/test/<category>')
+def test(category):
+    return render_template('test.html', category=category)
+
 @app.route("/login", methods=["POST"])
 def login():
     # print(request.is_json) # json형태가 맞는지 확인
