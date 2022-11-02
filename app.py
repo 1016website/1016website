@@ -1,5 +1,3 @@
-# testtest
-
 from datetime import timedelta, datetime, timezone
 
 from flask import Flask, request, jsonify, render_template
