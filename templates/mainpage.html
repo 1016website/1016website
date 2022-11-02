@@ -3,9 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-{#    <link rel="stylesheet" media="all and (min-width:1200px)" href="desktop.css">#}
-{#    <link rel="stylesheet" media="all and (min-width:768px) and (max-width:1199px)" href="laptop.css">#}
-
 
     <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -14,106 +11,13 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
 
-    <title>메인페이지</title>
+    <title>Mainpage</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/mainpage.css" />
 
     <style>
-        * {
-            font-family: font-family: 'Noto Sans KR', sans-serif;
-        }
-
-        .mytitle {
-            max-width: 500px;
-            width: 95%;
-            height: 170px;
-            margin: auto;
-
-            color: balck;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .mytitle > h1 {
-            font-size: 50px;
-            font-family: 'Lobster', cursive;
-        !important;
-        }
-
-
-        .small_box {
-            background-color: #fdfdfd;
-            width: 400px;
-            height: 550px;
-            color: black;
-
-            border: 2px black solid;
-            border-radius: 5px;
-
-            margin-top: 0px;
-        }
-
-        .big_box {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-
-            margin: 20px auto 50px auto;
-        }
-
-        .big_box > div {
-            margin-right: 50px;
-        }
-
-        .frontend {
-            width: 115px;
-            font-size: 30px;
-            margin: 50px auto 0 auto;
-        }
-
-        .content {
-            background-color: white;
-            width: 140px;
-            height: 140px;
-            font-size: 30px;
-
-
-            border: black solid;
-            margin: 50px auto 0 auto;
-
-            border-radius: 5px;
-
-        }
-
-        .content > p {
-            text-align: center;
-            font-size: 15px;
-        }
-
-        .contents {
-            display: flex;
-            flex-direction: row;
-            /*align-items: center;*/
-            /*justify-content: center;*/
-        }
-
-        .content > img {
-            display: block;
-            margin: auto;
-        }
-
-        .content:hover {
-            border: 4px solid black;
-        }
-
-
     </style>
 </head>
 
@@ -121,7 +25,10 @@
 <div class="mytitle">
     <h1>Let's Code Together!</h1>
 </div>
-<div class="big_box">
+<div style="position:fixed; left:50px; top:50px; cursor:pointer; font-size:14px; font-weight:600;">
+    <span class="mainpage_back" onclick="history.back()">뒤로가기</span>
+</div>
+<div class=" big_box">
     <div class="row">
         <div class="col">
             <div class="small_box">
@@ -180,11 +87,10 @@
             </div>
         </div>
     </div>
-
-
 </div>
 </div>
 </div>
 </body>
 
 </html>
+
