@@ -93,11 +93,11 @@
 .mainpage_back {
     font-size: 13px;
     font-weight: 400;
-    color: #fff;
+    color: rgba(114, 192, 188);
     padding: 10px;
     border-radius: 2px;
-    background: rgba(114, 192, 188);
-    border: none;
+    background: transparent;
+    border: 1px solid rgba(114, 192, 188);
     cursor: pointer;
     letter-spacing: 0.5px;
 }
