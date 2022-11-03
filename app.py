@@ -15,11 +15,11 @@ from bs4 import BeautifulSoup
 import certifi
 
 ca = certifi.where()
-client = MongoClient('mongodb+srv://test:sparta@cluster0.shbwsw1.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
-
+client = MongoClient('mongodb+srv://test:sparta@cluster0.hqmjigh.mongodb.net/Cluster0?retryWrites=true&w=majority',
+                     tlsCAFile=ca)
 db = client.dbsparta
 app = Flask(__name__)
-
+bcrypt = Bcrypt(app)
 
 # ----------------------------------------------------------------------
 
@@ -70,7 +70,7 @@ def login():
     return response, 200  # 서버가 제대로 요청을 처리했다는 성공
 
 
-@app.route('/user/signup', methods=['POST'])
+@app.route('/signup', methods=['POST'])
 def signup():
     # id, password 받아오고 저장
     user_email = request.form['user_email']
@@ -79,7 +79,7 @@ def signup():
     pw_hash = generate_password_hash(user_pwd)
 
     # id 중복확인
-    if db.user.count_documents({'user_eamil': user_email}) == 0:
+    if db.user.count_documents({'user_email': user_email}) == 0:
         db.user.insert_one({'user_email': user_email, 'user_pwd': pw_hash, 'user_nick': user_nick})
         return jsonify({'result': 'SUCCESS', 'message': 'SIGN UP SUCCESS'})
     else:
