@@ -52,12 +52,12 @@ def login():
     one = db.user.find_one({'user_email': email}, {'_id': False})  # 검색이 됬다면 None은 아닐터
 
     if one is None:
-        return jsonify({"msg": "해당하는 이메일이 존재하지 않습니다"})  # 접근불가 오류
+        return jsonify({"msg": "해당하는 이메일이 존재하지 않습니다", "login": False})  # 접근불가 오류
 
     p = check_password_hash(one['user_pwd'],password) # 암호 비교
 
     if p is not True:
-        return jsonify({"msg": "비밀번호가 맞지 않습니다"})  # 불일치 접근 불가
+        return jsonify({"msg": "비밀번호가 맞지 않습니다", "login": False})  # 불일치 접근 불가
 
     access_token = create_access_token(identity=email)  # jwt token 생성
     refresh_token = create_refresh_token(identity=email)  # 갱신을 위한 refresh_token 생성

@@ -11,8 +11,12 @@ function login() {
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (response) {
-            alert(response['msg']);
-            window.location.href="/mainpage";
+            if (response['login'] === true){
+                alert(response['msg']);
+                window.location.href="/mainpage";
+            } else {
+                alert(response['msg']);
+            }
         }
     });
 }
