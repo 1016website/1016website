@@ -6,53 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="../static/css/signup.css" rel="stylesheet" />
     <link href="../static/css/reset.css"  rel="stylesheet" />
-    <script>
-        $(document).ready(function () {
-        });
-        function login() {
-            let data = {
-                "email": $('#userEmail').val(),
-                "password": $('#password').val()
-            }
-            $.ajax({
-                type: "POST",
-                url: "/login",
-                data: JSON.stringify(data),
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function (response) {
-                    alert(response['msg']);
-                    window.location.reload();
-                }
-            });
-        }
-
-        function logout() {
-            $.ajax({
-                type: "GET",
-                url: "/logout",
-                data: {},
-                success: function (response) {
-                    alert(response['msg']);
-                    window.location.reload()
-                }
-            })
-        }
-
-        function protect() {
-            $.ajax({
-                type: "GET",
-                url: "/protected",
-                data: {},
-                success: function (response) {
-                    console.log(response);
-                    if (response['result'] === 'success') {
-
-                    }
-                }
-            });
-        }
-    </script>
+    <script src="../static/js/login.js"></script>
+    <script></script>
 </head>
 <body>
 <div id="wrapper">
