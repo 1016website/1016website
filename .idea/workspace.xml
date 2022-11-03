@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c137bb83-bb65-4cde-804b-c1de21ef0947" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/static/css/mainpage.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/mainpage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/specificstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/specificstyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/specific.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/specific.html" afterDir="false" />
-    </list>
+    <list default="true" id="c137bb83-bb65-4cde-804b-c1de21ef0947" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667458403265</updated>
       <workItem from="1667458404723" duration="5764000" />
-      <workItem from="1667465427911" duration="1377000" />
+      <workItem from="1667465427911" duration="1723000" />
     </task>
     <servers />
   </component>
