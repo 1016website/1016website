@@ -20,7 +20,6 @@ client = MongoClient('mongodb+srv://test:sparta@cluster0.shbwsw1.mongodb.net/?re
 db = client.dbsparta
 app = Flask(__name__)
 
-from pymongo import MonfgoClient
 
 # ----------------------------------------------------------------------
 
