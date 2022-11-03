@@ -1,15 +1,17 @@
 * {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: font-family: 'Noto Sans KR', sans-serif;
 }
 
 #wrapper {
-  position: relative;
+    position: relative;
 }
+
 .specific_wrapper {
-  height: 100vh;
-  position: relative;
-  background: #fdfdfd;
+    height: 100vh;
+    position: relative;
+    background: #fdfdfd;
 }
+
 .mytitle {
     display: flex;
     flex-direction: column;
@@ -29,18 +31,20 @@
 
     box-shadow: 0px 0px 3px 0px gray;
 }
-.add_button{
-    padding: 6px;
-    font-size: 14px;
+
+.add_button {
+    width: 200px;
+    font-size: 15px;
     font-weight: 400;
-    margin-right: 10px;
-    color: #fff;
+    color: #fdfdfd;
+    padding: 10px;
     border-radius: 2px;
     background: rgba(114, 192, 188);
     border: none;
     cursor: pointer;
     letter-spacing: 0.5px;
 }
+
 .card-img-top {
     height: 160px;
 }
@@ -108,6 +112,18 @@
     border-radius: 2px;
     background: rgba(114, 192, 188);
     border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.specific_back {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(114, 192, 188);
+    padding: 10px;
+    border-radius: 2px;
+    background: transparent;
+    border: 1px solid rgba(114, 192, 188);
     cursor: pointer;
     letter-spacing: 0.5px;
 }
