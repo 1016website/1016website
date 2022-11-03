@@ -20,6 +20,15 @@ client = MongoClient('mongodb+srv://test:sparta@cluster0.shbwsw1.mongodb.net/?re
 db = client.dbsparta
 app = Flask(__name__)
 
+from pymongo import MonfgoClient
+
+# ----------------------------------------------------------------------
+
+# __name__ 변수는 모듈의 이름을 가진 변수로 실행하는 기준이 되는 py의 이름은 __main__에 해당한다.
+# 만약 app.py에서 another.py라는 모듈을 사용했다면 app.py의 __name__ == __main__ , another.py의 __name__ == another가 된다.
+# Flask(__name__) 라우팅 경로를 설정. 해당 라우팅 경로로 요청이 올 때 실행할 함수를 아래에 작성한다.
+app = Flask(__name__)
+
 # jwt 가장 기초세팅 start -----------------------------------------------
 app.config["JWT_COOKIE_SECURE"] = False  # https를 통해서만 cookie가 갈수 있는지
 app.config["JWT_TOKEN_LOCATION"] = ["cookies"]  # 토큰을 어디서 찾을지 설정
