@@ -55,7 +55,7 @@ function Signup() {
   $.ajax({
     type: "POST",
     url: "/user/signup",
-    data: { user_id: username, user_pwd: password, user_nick: nick },
+    data: { user_emain: userEmail, user_pwd: password, user_nick: nick },
     success: function (res) {
       console.log(res);
       if (res.result == "FAIL") {
