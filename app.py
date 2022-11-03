@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 import certifi
 
 ca = certifi.where()
-client = MongoClient('mongodb+srv://test:sparta@cluster0.hqmjigh.mongodb.net/Cluster0?retryWrites=true&w=majority',
+client = MongoClient('mongodb+srv://test:sparta@cluster0.i7caukz.mongodb.net/Cluster0?retryWrites=true&w=majority',
                      tlsCAFile=ca)
 db = client.dbsparta
 app = Flask(__name__)
@@ -49,12 +49,12 @@ def login():
     email = user['email']
     password = user['password']
 
-    one = db.users.find_one({'email': email}, {'_id': False})  # 검색이 됬다면 None은 아닐터
+    one = db.user.find_one({'user_email': email}, {'_id': False})  # 검색이 됬다면 None은 아닐터
 
     if one is None:
         return jsonify({"msg": "해당하는 이메일이 존재하지 않습니다"})  # 접근불가 오류
 
-    p = check_password_hash(one['password'],password) # 암호 비교
+    p = check_password_hash(one['user_pwd'],password) # 암호 비교
 
     if p is not True:
         return jsonify({"msg": "비밀번호가 맞지 않습니다"})  # 불일치 접근 불가

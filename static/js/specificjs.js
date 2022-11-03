@@ -1,3 +1,4 @@
+document.write("<script src='./login.js'></script>");
 $(document).ready(function () {
     show_video();
 });
@@ -35,7 +36,6 @@ function show_video() {
                                               </div>`
                     $('#cards').append(temp_html)
                 }
-
             }
         }
     });

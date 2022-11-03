@@ -1,5 +1,4 @@
-$(document).ready(function () {
-});
+document.write("<script src='./specificjs.js'></script>");
 function login() {
     let data = {
         "email": $('#userEmail').val(),
@@ -13,7 +12,7 @@ function login() {
         contentType: "application/json; charset=utf-8",
         success: function (response) {
             alert(response['msg']);
-            window.location.reload();
+            window.location.href="/mainpage";
         }
     });
 }
@@ -30,7 +29,7 @@ function logout() {
     })
 }
 
-function protect() {
+function protect(page) {
     $.ajax({
         type: "GET",
         url: "/protected",
@@ -38,7 +37,10 @@ function protect() {
         success: function (response) {
             console.log(response);
             if (response['result'] === 'success') {
-
+                save_video();
+            } else {
+                alert("로그인하세요!");
+                window.location.href='/login';
             }
         }
     });
