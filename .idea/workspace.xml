@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c137bb83-bb65-4cde-804b-c1de21ef0947" name="변경" comment="" />
+    <list default="true" id="c137bb83-bb65-4cde-804b-c1de21ef0947" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/specificstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/specificstyle.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +19,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2H1hGj6CO3FXAVs4J1SAbuNtU7b" />
   <component name="ProjectViewState">
@@ -34,6 +41,9 @@
   }
 }</component>
   <component name="RunManager" selected="Flask 서버.Flask (app.py)">
+    <configuration name="specific.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/1016website/templates/specific.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="1016website" type="PythonConfigurationType" factoryName="Python">
       <module name="1016website" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,6 +84,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Flask 서버.Flask (app.py)" />
+        <item itemvalue="JavaScript 디버그.specific.html" />
       </list>
     </recent_temporary>
   </component>
@@ -105,6 +116,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/1016website$Flask__app_py_.coverage" NAME="Flask (app.py) 커버리지 결과" MODIFIED="1667465453847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/1016website$Flask__app_py_.coverage" NAME="Flask (app.py) 커버리지 결과" MODIFIED="1667468593989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

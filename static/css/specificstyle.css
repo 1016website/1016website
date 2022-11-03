@@ -31,8 +31,7 @@
 
     box-shadow: 0px 0px 3px 0px gray;
 }
-
-.add_button {
+.add_button{
     width: 200px;
     font-size: 15px;
     font-weight: 400;
@@ -116,6 +115,8 @@
     letter-spacing: 0.5px;
 }
 
+
+
 .specific_back {
     font-size: 13px;
     font-weight: 400;
@@ -127,3 +128,4 @@
     cursor: pointer;
     letter-spacing: 0.5px;
 }
+
