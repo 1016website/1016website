@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 import certifi
 
 ca = certifi.where()
-client = MongoClient('mongodb+srv://test:sparta@cluster0.i7caukz.mongodb.net/Cluster0?retryWrites=true&w=majority',
+client = MongoClient('몽고DB계정 및 애플리케이션 연결',
                      tlsCAFile=ca)
 db = client.dbsparta
 app = Flask(__name__)
