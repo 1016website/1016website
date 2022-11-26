@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 import certifi
 
 ca = certifi.where()
-client = MongoClient('몽고DB계정 및 애플리케이션 연결',
+client = MongoClient('몽고DB계정 및 애플리케이션 연결내용을 적으세요 보안사항 문제로 삭제합니다',
                      tlsCAFile=ca)
 db = client.dbsparta
 app = Flask(__name__)
